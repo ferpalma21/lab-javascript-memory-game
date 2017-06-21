@@ -83,13 +83,16 @@ $(document).ready(function(){
     console.log(preArray);
     memoryGame.selectedCards.push(preArray);
     console.log(memoryGame.selectedCards);
-  });
-  if (memoryGame.selectedCards.length === 2){
-    if (memoryGame.selectedCards[0]===memoryGame.selectedCards[1]){
-      console.log("IGUAL");
-      
-    }else{
-      memoryGame.selectedCards.splice(0, 2);
+
+    if (memoryGame.selectedCards.length === 2){
+      if (memoryGame.selectedCards[0]===memoryGame.selectedCards[1]){
+        $('.card').toggle();
+        memoryGame.correctPairs++;
+        console.log("IGUAL");
+      }else{
+        memoryGame.selectedCards.splice(0, 2);
+        console.log("no es igual");
+      }
     }
-  }
+  });
 });
